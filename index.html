@@ -5,9 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/toggle-switch.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body>
+
+
+<body class="grid-container">
     <header>
         <!-- Web App tm Logo -->
         <!-- <img src="svgs/home.svg"> -->
@@ -15,31 +19,34 @@
 
         <!-- Notification Bell -->
         <div>
-            <img src="svgs/bell.svg" <div id="notifications">
-
-        </div>
+            <img src="svgs/bell.svg">
+            <div id="notifications">
+            </div>
+            <!-- Profile Picture -->
+            <img src="images/member-1.jpg" <h3>Student Name</h3>
         </div>
 
         <!-- Profile Image -->
         <h3> Student Name</h3>
     </header>
 
-    <nav>
+    <navigation>
         <!-- Home  -->
-        <a><img src="svgs/home.svg" </a>
-            <!-- Chart -->
-            <a><img src="svgs/bar-chart.svg" </a>
-                <!-- Members -->
-                <a>
-                    <img src="svgs/members.svg" </a>
-                    <!-- Settings -->
-                    <a>
-                        <img src="svgs/settings.svg" </a>
-    </nav>
+        <a><img src="svgs/home.svg"> </a>
+        <!-- Chart -->
+        <a><img src="svgs/bar-chart.svg"></a>
+        <!-- Members -->
+        <a>
+            <img src="svgs/members.svg"> </a>
+        <!-- Settings -->
+        <a>
+            <img src="svgs/settings.svg"> </a>
+    </navigation>
     <main>
 
         <div class="main-header">
             <h2 class="headline">Dashboard</h2>
+            <!-- grey tab -->
             <div class="tab"></div>
         </div>
 
@@ -47,7 +54,6 @@
             ALERT BAR
          -->
         <div class="alert" id="alert">
-            <h2><strong>Alert:</strong>You have unread messages</h2>
             <!-- insert JS alert here -->
         </div>
         <!-- 
@@ -102,52 +108,101 @@
             <h3>Social Stats</h3>
             <div class="social-container">
                 <div class="social-image">
+                    <!-- social image svg -->
                 </div>
                 <div class="social-text">
-                    <p>Twitter</p>
-                    <p>12,345</p>
+                    <p>Facebook</p>
+                    <p>10,320</p>
                 </div>
             </div>
             <div class="social-container">
                 <div class="social-image">
+                    <!-- social image svg -->
                 </div>
                 <div class="social-text">
-                    <p>Twitter</p>
-                    <p>12,345</p>
+                    <p>Instagram</p>
+                    <p>16,445</p>
                 </div>
             </div>
             <div class="social-container">
                 <div class="social-image">
+                    <!-- social image svg -->
                 </div>
                 <div class="social-text">
                     <p>Twitter</p>
-                    <p>12,345</p>
+                    <p>22,189</p>
                 </div>
             </div>
         </section>
 
         <section>
             <h3>New Members</h3>
+
             <div class="members-container">
-                <img src="" class="profile-image">
+                <img src="images/member-1.jpg" class="profile-image">
                 <div class="members-text">
-                    <p>Name</p>
-                    <a href="">Email</a>
+                    <p>Victoria Chambers</p>
+                    <a href="#">victoria.chambers80@example.com</a>
+                </div>
+                <p>10/15/20</p>
+            </div>
+            <div class="members-container">
+                <img src="images/member-2.jpg" class="profile-image">
+                <div class="members-text">
+                    <p>Dale Byrd</p>
+                    <a href="#">dale.byrd52@example.com</a>
                 </div>
                 <p>Date</p>
+            </div>
+            <div class="members-container">
+                <img src="images/member-3.jpg" class="profile-image">
+                <div class="members-text">
+                    <p>Dawn Wood</p>
+                    <a href="#">dawn.wood16@example.com</a>
+                </div>
+                <p>10/15/20</p>
+            </div>
+            <div class="members-container">
+                <img src="images/member-4.jpg" class="profile-image">
+                <div class="members-text">
+                    <p>Dan Oliver</p>
+                    <a href="#">dan.oliver@example.com</a>
+                </div>
+                <p>10/15/20</p>
             </div>
         </section>
 
         <section>
             <h3>Recent Activity</h3>
             <div class="members-container">
-                <img src="" class="profile-image">
+                <img src="images/member-1.jpg" class="profile-image">
                 <div class="members-text">
-                    <p>Name</p>
-                    <a href="">Email</a>
+                    <p>Victoria Chambers commented on <strong>WebApp's SEO Tips</strong></p>
+                    <p>4 hours ago</p>
                 </div>
-                <p>Time ago</p>
             </div>
+            <div class="members-container">
+                <img src="images/member-2.jpg" class="profile-image">
+                <div class="members-text">
+                    <p>Dale Byrd liked the post <strong>Facebook's Changes for 2021</strong></p>
+                    <p>5 hours ago</p>
+                </div>
+            </div>
+            <div class="members-container">
+                <img src="images/member-3.jpg" class="profile-image">
+                <div class="members-text">
+                    <p>Dawn Wood commented on <strong>Facebook's Changes for 2021</strong></p>
+                    <p>5 hours ago</p>
+                </div>
+            </div>
+            <div class="members-container">
+                <img src="images/member-4.jpg" class="profile-image">
+                <div class="members-text">
+                    <p>Dan Oliver posted <strong>WebApp's SEO Tips</strong></p>
+                    <p>1 day ago</p>
+                </div>
+            </div>
+
         </section>
 
         <!-- 
@@ -166,7 +221,34 @@
         <section>
             <h3>Settings</h3>
             <!-- CSS Toggle -->
+            <label class="switch-light switch-candy" onclick="">
+                <input type="checkbox">
+
+                <strong>
+                    Send Email Notifications
+
+                </strong>
+
+                <span>
+                    <span>Off</span>
+                    <span>On</span>
+                    <a></a>
+                </span>
+            </label>
             <!-- CSS Toggle -->
+            <label class="switch-light switch-candy" onclick="">
+                <input type="checkbox">
+
+                <strong>
+                    Set Profile to Public
+                </strong>
+
+                <span>
+                    <span>Off</span>
+                    <span>On</span>
+                    <a></a>
+                </span>
+            </label>
 
             <select class="form-field" id="timezone">
                 <option disabled selected> Select a Timezone</option>
