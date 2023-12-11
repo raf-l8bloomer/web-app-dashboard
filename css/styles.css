@@ -55,7 +55,8 @@
 }
 
 .nav a {
-    margin: 0 10px; /* Adjust the spacing between items */
+    margin: 0 10px;
+    /* Adjust the spacing between items */
 }
 
 .nav img {
@@ -64,8 +65,60 @@
     height: auto;
 }
 
+/* DASHBOARD */
+
 .main {
     display: grid;
+}
+
+/* MAIN HEADER */
+
+.dashboard-header {
+    display: flex;
+    flex-direction: row;
+}
+
+.headline {
+    margin-right: auto;
+}
+
+.tab {
+    background-color: grey;
+    width: 100%;
+    height: 100%;
+    margin-left: 10px;
+}
+
+/* ALERT */
+
+.alert {
+    background-color: pink;
+}
+
+/* TRAFFIC */
+
+.traffic-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.traffic-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.traffic-nav li {
+    list-style: none;
+    margin: 10px;
+}
+
+.traffic-nav li:active {
+    background-color: green;
+    color: white;
+    border: 1px solid green;
+    border-radius: 20px;
+
 }
 
 .canvas {
@@ -77,6 +130,10 @@
     width: 95vw;
 }
 
+/************************
+ TABLET STLYING 
+ ***********************/
+
 @media (min-width: 768px) {
     .grid-container {
         grid-template-columns: 55px 1fr;
@@ -85,21 +142,28 @@
             "nav main"
     }
 
+    /* NAV */
+
     .nav {
         flex-direction: column;
         justify-content: flex-start;
 
-  }
+    }
 
-  .nav a {
-    margin: 0 10px; /* Adjust the spacing between items */
-}
+    .nav a {
+        margin: 0 10px;
+        /* Adjust the spacing between items */
+    }
+
+    /* MAIN SECTION COLUMNS*/
 
     .main {
         background-color: red;
         grid-template-columns: 50%;
     }
 
+    .dashboard-header,
+    .alert,
     .traffic,
     .social {
         grid-column: 1 / span 2;
@@ -124,4 +188,17 @@
     .widget-container-half {
         width: 45vw;
     }
+
+/* TRAFFIC */
+
+.traffic-header {
+    display: flex;
+    flex-direction: row;
+}
+
+.traffic-header h3 {
+    margin-right: auto;
+}
+
+
 }
