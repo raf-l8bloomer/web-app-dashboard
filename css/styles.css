@@ -22,15 +22,20 @@
     grid-area: main;
 }
 
+.profile-pic {
+    width: auto;
+    border-radius: 50%;
+}
+
 /* HEADER */
 
 .header {
     background-color: purple;
     display: flex;
     width: 100%;
+    align-items: center;
+
 }
-
-
 
 .header h1 {
     margin-right: auto;
@@ -38,7 +43,15 @@
 
 .user-corner {
     display: flex;
-    flex-direction: row;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.user-corner h3 {
+    margin: 10px;
+
 }
 
 /* MAIN NAVIGATION */
@@ -69,6 +82,7 @@
 
 .main {
     display: grid;
+
 }
 
 /* MAIN HEADER */
@@ -76,6 +90,7 @@
 .dashboard-header {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .headline {
@@ -130,13 +145,99 @@
     width: 95vw;
 }
 
+/* SOCIAL STATS */
+
+.social {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 10px;
+}
+
+.social h3 {
+    width: 100%;
+    background-color: pink;
+}
+
+.social-container {
+    background-color: grey;
+    border: 1px solid black;
+    width: 100%;
+
+}
+
+/* MEMBERS */
+
+.members {
+    display: flex;
+    flex-direction: column;
+}
+
+.member-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.member-text {
+    text-align: center;
+}
+
+/* RECENT ACTIVITY */
+
+.activity {
+    display: flex;
+    flex-direction: column;
+}
+
+.activity-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.activity-text {
+    text-align: center;
+}
+
+/* MESSAGE USER */
+
+.message-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+}
+
+.message-container * {
+   margin: 10px;
+}
+
+.message-container textarea {
+    height: 100px;
+}
+
+.message-container button {
+    margin-top: auto;
+}
+
+
+/* SETTINGS */
+
+
+
 /************************
  TABLET STLYING 
  ***********************/
 
 @media (min-width: 768px) {
     .grid-container {
-        grid-template-columns: 55px 1fr;
+        grid-template-columns: 7% 1fr;
         grid-template-areas:
             "header header"
             "nav main"
@@ -147,6 +248,7 @@
     .nav {
         flex-direction: column;
         justify-content: flex-start;
+        padding: 5px;
 
     }
 
@@ -171,9 +273,10 @@
 
     .daily,
     .members,
-    .message {
+    tha .message {
         grid-column: 1 / span 1;
     }
+
 
     .mobile,
     .activity,
@@ -183,22 +286,73 @@
 
     .widget-container-full {
         width: 90vw;
+        background-color: blue;
     }
 
     .widget-container-half {
         width: 45vw;
+
     }
 
-/* TRAFFIC */
+    .widget-container-half img {
+        width: 100%;
+    }
 
-.traffic-header {
-    display: flex;
-    flex-direction: row;
-}
+    /* TRAFFIC */
 
-.traffic-header h3 {
-    margin-right: auto;
-}
+    .traffic-header {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .traffic-header h3 {
+        margin-right: auto;
+    }
+
+    /* SOCIALS */
+
+    .social {
+        flex-direction: row;
+    }
+
+    .social h3 {
+        width: 100%;
+        border: 5px solid black;
+    }
+
+    .social-container {
+        flex: 1;
+        border: 10px solid green;
+    }
+
+
+    /* MEMBERS */
+
+    .member-container {
+        flex-direction: row;
+        width: 90%;
+    }
+
+    .member-text {
+        text-align: left;
+        margin-right: auto;
+        margin-left: 10px;
+    }
+
+    /* RECENT ACTIVITY */
+
+    .activity-container {
+        flex-direction: row;
+        width: 90%;
+    }
+
+    .activity-text {
+        text-align: left;
+        margin-right: auto;
+        margin-left: 10px;
+    }
+
+
 
 
 }
