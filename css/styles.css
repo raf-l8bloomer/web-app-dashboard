@@ -248,6 +248,7 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
 
 }
 
@@ -256,14 +257,16 @@ a {
 }
 .message-container input {
     height: 40px;
+    width: 100%;
 
 }
 
 .message-container textarea {
     height: 100px;
+    width: 100%;
 }
 
-.message-container button {
+#send {
     margin-top: auto;
 }
 
@@ -336,6 +339,8 @@ a {
 
 /* BUTTONS */
 
+
+
 .button-primary,
 .button-disabled {
     height: 3em;
@@ -391,20 +396,20 @@ a {
     .dashboard-header,
     .alert,
     .traffic,
-    .social {
+    .social,
+    .members,
+    .message,
+    .activity,
+    .settings {
         grid-column: 1 / span 2;
     }
 
-    .daily,
-    .members,
-    tha .message {
+    .daily{
         grid-column: 1 / span 1;
     }
 
 
-    .mobile,
-    .activity,
-    .settings {
+    .mobile {
         grid-column: 2 / span 1;
     }
 
@@ -413,7 +418,7 @@ a {
     }
 
     .widget-container-half {
-        width: 45vw;
+        width: 40vw;
 
     }
 
@@ -436,6 +441,8 @@ a {
 
     .social {
         flex-direction: row;
+        border-bottom: 1px solid #D2D2D2;
+
     }
 
     .social h3 {
@@ -449,9 +456,12 @@ a {
 
     /* MEMBERS */
 
+
     .member-container {
         flex-direction: row;
-        width: 90%;
+        width: 90vw;
+        height: 10vh;
+        border-bottom: 1px solid #D2D2D2;
     }
 
     .member-text {
@@ -462,9 +472,14 @@ a {
 
     /* RECENT ACTIVITY */
 
+
     .activity-container {
         flex-direction: row;
-        width: 90%;
+        width: 90vw;
+        height: 10vh;
+        border-bottom: 1px solid #D2D2D2;
+
+
     }
 
     .activity-text {
@@ -473,7 +488,75 @@ a {
         margin-left: 10px;
     }
 
+}
 
 
+@media (min-width: 1024px) {
 
+    .daily,
+    .members,
+    .message {
+        grid-column: 1 / span 1;
+    }
+
+
+    .mobile,
+    .activity,
+    .settings {
+        grid-column: 2 / span 1;
+    }
+
+    .social {
+        border-bottom: none;
+    }
+
+    .members,
+    .activity {
+        border-top: 1px solid #D2D2D2
+
+    }
+
+    /* .members {
+        padding: 10px;
+    }; */
+
+    .activity {
+        border-left: 1px solid #D2D2D2;
+        padding-left: 10px;
+    }
+
+        /* MEMBERS */
+
+
+        .member-container {
+            flex-direction: row;
+            width: 40vw;
+            height: 10vh;
+            border-bottom: 1px solid #D2D2D2;
+        }
+    
+        .member-text {
+            text-align: left;
+            margin-right: auto;
+            margin-left: 10px;
+        }
+    
+        /* RECENT ACTIVITY */
+    
+    
+        .activity-container {
+            flex-direction: row;
+            width: 40vw;
+            height: 10vh;
+            border-bottom: 1px solid #D2D2D2;
+    
+    
+        }
+    
+        .activity-text {
+            text-align: left;
+            margin-right: auto;
+            margin-left: 10px;
+        }
+    
 }
