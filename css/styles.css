@@ -234,7 +234,7 @@ a {
 .social-num {
     font-size: 3em;
     margin: 0;
-
+    line-height: 1em;
 }
 
 
@@ -276,9 +276,11 @@ a {
 .activity-text {
     text-align: center;
 }
+
 .arrow {
     display: none;
 }
+
 /* MESSAGE USER */
 
 .message-container {
@@ -358,9 +360,9 @@ input[type=checkbox]:checked::after {
 .settings {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    align-content: space-between;
+    justify-content: center;
     margin: 0 10px;
+
 }
 
 .toggle-container {
@@ -370,34 +372,52 @@ input[type=checkbox]:checked::after {
     margin: 15px;
 }
 
+.form-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .form-field {
     height: 40px;
-    width: auto;
+    width: 100%;
 }
 
 /* BUTTONS */
 
+.settings-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
 
+.button-primary {
+    background-color: #7477BF;
+}
 
 .button-primary,
 .button-disabled {
     height: 3em;
-    background-color: #7477BF;
+    border: none;
     border-radius: 5px;
     width: 100%;
+    max-width: 900px;
+    color: white;
 }
 
-.settings-button {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: auto;
+.button-disabled {
+    background-color: #D2D2D2;
 }
 
-
-.settings-button button {
+#save,
+#cancel {
     margin: 10px;
 }
+
 
 /************************
  TABLET STYLING 
@@ -522,11 +542,23 @@ input[type=checkbox]:checked::after {
         margin-left: 10px;
     }
 
+    /* MESSAGE & SETTINGS */
+
+    /* .message,
+    .settings {
+        width: 40vw;
+        margin: 0;
+    } */
+
+
+    /* ARROWS */
+
     .arrow {
-        display:inline;
+        display: inline;
         font-size: 1.5em;
         color: #D2D2D2;
     }
+
 
 }
 
@@ -554,11 +586,6 @@ input[type=checkbox]:checked::after {
     .activity {
         border-top: 1px solid #D2D2D2
     }
-
-    /* .members {
-        padding: 10px;
-    }; */
-
 
 
     /* MEMBERS */
@@ -602,15 +629,14 @@ input[type=checkbox]:checked::after {
         margin-left: 10px;
     }
 
-
-    .message,
-    .settings {
-        width: 40vw;
-        margin: 0;
+    .message-container {
+        padding: 0 10px;
     }
+
 
     .settings {
         padding-left: 10px;
+        margin: 0;
     }
 
     .settings {
