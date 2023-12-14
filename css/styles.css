@@ -55,7 +55,7 @@ a {
 .header {
     background-color: #7477BF;
     display: flex;
-    width: 100vw;
+    width: 100%;
     align-items: center;
     padding: 0 20px;
 
@@ -145,8 +145,24 @@ a {
 
 /* ALERT */
 
-.alert {
+.alert-banner {
     background-color: #7477BF;
+    width: 98%;
+    height: 4em;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    margin: 10px 10px;
+    padding: 0 10px;
+    align-items: center;
+}
+
+.alert-banner p {
+    color: white;
+}
+
+.alert-banner-close {
+    margin-left: auto;
 }
 
 /* TRAFFIC */
@@ -306,9 +322,6 @@ a {
     width: 100%;
 }
 
-#send {
-    margin-top: auto;
-}
 
 .daily,
 .mobile,
@@ -317,6 +330,14 @@ a {
 .activity,
 .message {
     border-bottom: 1px solid #D2D2D2;
+}
+
+/*MEMBERS*/
+
+.member-container:not(:last-child),
+.activity-container:not(:last-child) {
+    border-bottom: 1px solid #D2D2D2;
+    width: 90%;
 }
 
 /* SETTINGS */
@@ -415,7 +436,8 @@ input[type=checkbox]:checked::after {
 
 #save,
 #cancel {
-    margin: 10px;
+    /* margin-top: auto; */
+    /* margin: 10px; */
 }
 
 
@@ -452,7 +474,6 @@ input[type=checkbox]:checked::after {
     }
 
     .dashboard-header,
-    .alert,
     .traffic,
     .social,
     .members,
@@ -565,6 +586,11 @@ input[type=checkbox]:checked::after {
 
 @media (min-width: 1024px) {
 
+    .alert {
+        grid-column: 1 / span 2;
+
+    }
+
     .daily,
     .members,
     .message {
@@ -617,10 +643,7 @@ input[type=checkbox]:checked::after {
 
     }
 
-    .member-container:not(:last-child),
-    .activity-container:not(:last-child) {
-        border-bottom: 1px solid #D2D2D2;
-    }
+
 
 
     .activity-text {
@@ -629,6 +652,9 @@ input[type=checkbox]:checked::after {
         margin-left: 10px;
     }
 
+    .message {
+        border-bottom: none;
+    }
     .message-container {
         padding: 0 10px;
     }
