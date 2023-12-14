@@ -16,6 +16,7 @@ alertBanner.addEventListener('click', e => {
 })
 
 const trafficCanvas = document.querySelector('#traffic-chart');
+
 let trafficData = {
     labels: [
         "16-22",
@@ -63,7 +64,7 @@ let trafficOptions = {
     },
     plugins: {
         legend: {
-            display: false
+            display: true
         }
     }
 };
