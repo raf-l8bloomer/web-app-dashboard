@@ -434,11 +434,7 @@ input[type=checkbox]:checked::after {
     background-color: #D2D2D2;
 }
 
-#save,
-#cancel {
-    /* margin-top: auto; */
-    /* margin: 10px; */
-}
+
 
 
 /************************
