@@ -7,6 +7,7 @@
 body {
     font-family: 'Oswald', sans-serif;
     font-size: 16px;
+    line-height: 0.2;
 }
 
 a {
@@ -16,8 +17,6 @@ a {
 .icon {
     fill: white;
 }
-
-
 
 
 .grid-container {
@@ -84,15 +83,6 @@ a {
 
 }
 
-.bell {
-    min-width: 5px;
-}
-
-.bell-path {
-    color: white;
-}
-
-
 /* MAIN NAVIGATION */
 
 .nav {
@@ -106,6 +96,7 @@ a {
     width: 100%;
 }
 
+.bell,
 .main-nav {
     max-width: 60px;
     width: 100%;
@@ -118,7 +109,7 @@ a {
 
 .main {
     display: grid;
-    padding-left: 1em;
+    padding-left: 0.5em;
 }
 
 /* MAIN HEADER */
@@ -217,11 +208,13 @@ a {
     background-color: #F7F7F7;
     border: 1px solid #D2D2D2;
     border-radius: 10px;
-    margin: 1em;
+    margin: 0.3em 0.2em;
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 10px
+    justify-content: flex-start;
+    padding: 10px;
+
 }
 
 .social-image {
@@ -236,8 +229,6 @@ a {
 .social-text {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
     margin-left: 1em;
 }
 
@@ -251,8 +242,9 @@ a {
     font-size: 3em;
     margin: 0;
     line-height: 1em;
-}
+    flex-grow: 1;
 
+}
 
 
 /* MEMBERS */
@@ -341,6 +333,10 @@ a {
 }
 
 /* SETTINGS */
+
+.toggle-container{ 
+    flex-grow: 1;
+}
 
 
 input[type=checkbox] {
@@ -442,6 +438,12 @@ input[type=checkbox]:checked::after {
  ***********************/
 
 @media (min-width: 768px) {
+
+    body{
+        font-size: 1.2em;
+        line-height: 0.3em;
+    }
+
     .grid-container {
         grid-template-columns: 7% 1fr;
         grid-template-areas:
@@ -475,7 +477,8 @@ input[type=checkbox]:checked::after {
     .members,
     .message,
     .activity,
-    .settings {
+    .settings,
+    .alert {
         grid-column: 1 / span 2;
     }
 
@@ -494,7 +497,7 @@ input[type=checkbox]:checked::after {
 
     .widget-container-half {
         width: 40vw;
-
+        height: 30vw;
     }
 
     .widget-container-half img {
@@ -512,11 +515,23 @@ input[type=checkbox]:checked::after {
         margin-right: auto;
     }
 
+    .daily,
+    .mobile {
+        border-top: 1px solid #D2D2D2;
+    }
+
+    .mobile {
+        border-left: 1px solid #D2D2D2;
+        padding-left: 10px;
+    }
+
     /* SOCIALS */
 
     .social {
         flex-direction: row;
         border-bottom: 1px solid #D2D2D2;
+        margin: 1em 0.2em;
+
     }
 
     .social h3 {
@@ -524,8 +539,8 @@ input[type=checkbox]:checked::after {
     }
 
     .social-container {
-        width: 30%;
-        margin: 0.5em;
+        width: 32%;
+        /* margin: auto; */
     }
 
 
@@ -581,6 +596,11 @@ input[type=checkbox]:checked::after {
 
 
 @media (min-width: 1024px) {
+
+    body{
+        font-size: 1.3em;
+        line-height: 0.5em;
+    }
 
     .alert {
         grid-column: 1 / span 2;
@@ -664,7 +684,5 @@ input[type=checkbox]:checked::after {
     .settings {
         border-left: 1px solid #D2D2D2;
     }
-
-
 
 }
