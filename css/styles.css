@@ -83,6 +83,26 @@ a {
 
 }
 
+/* Notification Styling reference: 
+https://syntackle.live/blog/how-to-create-a-notification-badge-with-css-WrkjgwxkL5bw-mFwMFjl/"
+*/
+
+#notification {
+    height: 10px;
+    width: 10px;
+    border: 1px solid #90EE90;
+    border-radius: 50%;
+    background-color: #90EE90;
+    position: relative; 
+    top: -60px;
+    left: 40px;
+}
+
+.whole-bell {
+    border-right: 1px solid white;
+}
+
+
 /* MAIN NAVIGATION */
 
 .nav {
@@ -314,7 +334,7 @@ a {
     width: 100%;
 }
 
-
+.traffic,
 .daily,
 .mobile,
 .social,
@@ -326,10 +346,15 @@ a {
 
 /*MEMBERS*/
 
+.member-container,
+.activity-container {
+    width: 90%;
+
+}
+
 .member-container:not(:last-child),
 .activity-container:not(:last-child) {
     border-bottom: 1px solid #D2D2D2;
-    width: 90%;
 }
 
 /* SETTINGS */
@@ -401,6 +426,22 @@ input[type=checkbox]:checked::after {
     height: 40px;
     width: 100%;
 }
+
+/**/
+
+.widget-container-full {
+    width: 90vw;
+    height: 30vh;
+}
+
+.widget-container-full {
+    height: 30vh;
+}
+
+.widget-container-half {
+    height: 30vh;
+}
+
 
 /* BUTTONS */
 
@@ -493,11 +534,12 @@ input[type=checkbox]:checked::after {
 
     .widget-container-full {
         width: 90vw;
+        height: 50vh;
     }
 
     .widget-container-half {
         width: 40vw;
-        height: 30vw;
+        height: 30vh;
     }
 
     .widget-container-half img {
@@ -637,6 +679,8 @@ input[type=checkbox]:checked::after {
         flex-direction: row;
         width: 40vw;
         height: 10vh;
+        padding: 50px 0;
+
     }
 
     .member-text {
@@ -656,6 +700,7 @@ input[type=checkbox]:checked::after {
         flex-direction: row;
         width: 40vw;
         height: 10vh;
+        padding: 50px 0;
 
     }
 

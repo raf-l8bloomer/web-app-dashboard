@@ -8,12 +8,20 @@ to complete</p >
     <p class="alert-banner-close">x</p>
 </div>`;
 
+const bellNotification = document.querySelector('.whole-bell');
+const notificationDiv = document.createElement('div');
+notificationDiv.id = "notification";
+bellNotification.insertAdjacentElement("beforeend", notificationDiv);
+
 alertBanner.addEventListener('click', e => {
     const element = e.target;
     if (element.classList.contains("alert-banner-close")) {
         alertBanner.style.display = "none";
+        notificationDiv.remove();
     }
 })
+
+
 
 const trafficCanvas = document.querySelector('#traffic-chart');
 
@@ -66,8 +74,10 @@ let trafficOptions = {
         legend: {
             display: false
         }
-    }
+    },
+    maintainAspectRatio: true
 };
+
 
 let trafficChart = new Chart (trafficCanvas, {
     type: 'line',
