@@ -79,7 +79,7 @@ let trafficOptions = {
 };
 
 
-let trafficChart = new Chart (trafficCanvas, {
+let trafficChart = new Chart(trafficCanvas, {
     type: 'line',
     data: trafficData,
     options: trafficOptions
@@ -98,7 +98,7 @@ const dailyData = {
 };
 
 const dailyOptions = {
-    scales:  {
+    scales: {
         y: {
             beginAtZero: true
         }
@@ -136,7 +136,7 @@ const mobileOptions = {
     aspectRatio: 1.9,
     plugins: {
         legend: {
-            position:'right',
+            position: 'right',
             labels: {
                 boxWidth: 20,
                 fontStyle: 'bold'
@@ -157,9 +157,9 @@ const send = document.querySelector('#send');
 
 send.addEventListener('click', () => {
 
-    if(user.value === "" && message.value === "") {
+    if (user.value === "" && message.value === "") {
         alert("Please fill out user and message fields before sending");
-    } else if (user.value === "" ) {
+    } else if (user.value === "") {
         alert("Please fill out user field before sending");
     } else if (message.value === "") {
         alert("Please fill out message field before sending");
@@ -168,19 +168,27 @@ send.addEventListener('click', () => {
     }
 })
 
-// const bellContainer = document.querySelector(".whole-bell");
-// const bell = document.querySelector(".bell");
+const wholeBell = document.querySelector(".whole-bell");
+const bell = document.querySelector(".bell-svg");
 
-// function myDropdown() {
-//     document.querySelector("#myDropdown").classList.toggle("show")
-// }
+bell.addEventListener('click', () => {
+    alert('You rang my bell!')
+})
 
-// window.onclick = function(event) {
-//     console.log(event);
-//     if (!event.target.matches('.whole-bell')) {
-//         let myDropdown = document.querySelector('#myDropdown');
-//         if (myDropdown.classList.contains('show')) {
-//             myDropdown.classList.remove('show');
-//         }
-//     }
-// }
+
+
+const trafficLinks = document.querySelectorAll('.traffic-nav-link');
+
+// Assign event listener to all traffic nav links
+trafficLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        // remove all active classes
+        trafficLinks.forEach(link => {
+            link.classList.remove('active')
+        });
+        e.target.classList.add('active')
+ 
+
+
+    })
+})
