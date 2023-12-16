@@ -168,5 +168,19 @@ send.addEventListener('click', () => {
     }
 })
 
-const bellContainer = document.querySelector(".whole-bell");
-const bell = document.querySelector(".bell");
+// const bellContainer = document.querySelector(".whole-bell");
+// const bell = document.querySelector(".bell");
+
+// function myDropdown() {
+//     document.querySelector("#myDropdown").classList.toggle("show")
+// }
+
+// window.onclick = function(event) {
+//     console.log(event);
+//     if (!event.target.matches('.whole-bell')) {
+//         let myDropdown = document.querySelector('#myDropdown');
+//         if (myDropdown.classList.contains('show')) {
+//             myDropdown.classList.remove('show');
+//         }
+//     }
+// }
