@@ -167,3 +167,6 @@ send.addEventListener('click', () => {
         alert(`Message successfully sent to: ${user.value}`)
     }
 })
+
+const bellContainer = document.querySelector(".whole-bell");
+const bell = document.querySelector(".bell");

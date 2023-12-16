@@ -80,8 +80,20 @@ a {
 
 .user-corner h3 {
     color: white;
+}
+
+.bell-icon {
+    transition: transform .4s ease-out;
+    transform-origin: 50% 50% ;
 
 }
+
+.whole-bell:hover .bell-icon{
+    transform: rotate(30deg);
+}
+
+
+
 
 /* Notification Styling reference: 
 https://syntackle.live/blog/how-to-create-a-notification-badge-with-css-WrkjgwxkL5bw-mFwMFjl/"
@@ -116,7 +128,7 @@ https://syntackle.live/blog/how-to-create-a-notification-badge-with-css-Wrkjgwxk
     width: 100%;
 }
 
-.bell,
+.bell-svg,
 .main-nav {
     max-width: 60px;
     width: 100%;
