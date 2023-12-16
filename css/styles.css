@@ -247,11 +247,12 @@ https://syntackle.live/blog/how-to-create-a-notification-badge-with-css-Wrkjgwxk
     width: 70vw;
 }
 
-.widget-container-full,
-.widget-container-half {
-    width: 100vw;
-    height: 50vh;
+.widget-container-full
+ {
+    width: 88vw;
+    height: 20vh;
 }
+
 
 /* SOCIAL STATS */
 
@@ -467,20 +468,7 @@ input[type=checkbox]:checked::after {
     width: 100%;
 }
 
-/**/
 
-/* .widget-container-full {
-    width: 90vw;
-    height: 30vh;
-}
-
-.widget-container-full {
-    height: 30vh;
-} */
-
-/* .widget-container-half {
-    height: 50vh;
-} */
 
 
 /* BUTTONS */
@@ -572,19 +560,15 @@ input[type=checkbox]:checked::after {
         grid-column: 2 / span 1;
     }
 
-    /* .widget-container-full {
-        width: 100vw;
-        height: 50vh;
-    } */
-
-    .widget-container-half {
-        width: 40vw;
+    .widget-container-full {
         height: 30vh;
     }
 
-    .widget-container-half img {
-        width: 100%;
+    .widget-container-half {
+        width: 45vw;
+        height: 15vh;
     }
+
 
     /* TRAFFIC */
 
