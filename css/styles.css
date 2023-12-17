@@ -755,3 +755,8 @@ input[type=checkbox]:checked::after {
     }
 
 }
+
+/* set  logic in settings for the toggle and geolocation and then save it to localStorage.
+ add localStorage.setItem('settings', whatever function that creates a setting) to the save button
+ add localStorage.removeItem() to cancel button
+*/

@@ -187,8 +187,8 @@ trafficLinks.forEach(link => {
             link.classList.remove('active')
         });
         e.target.classList.add('active')
- 
-
-
     })
 })
+
+localStorage.setItem('keyName', 'keyValue')
+
