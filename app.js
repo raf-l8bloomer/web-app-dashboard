@@ -107,7 +107,10 @@ const dailyOptions = {
         legend: {
             display: false
         }
-    }
+    },
+    maintainAspectRatio: false,
+    aspectRatio: 2
+
 };
 
 let dailyChart = new Chart(dailyCanvas, {
@@ -134,6 +137,7 @@ const mobileData = {
 
 const mobileOptions = {
     aspectRatio: 1.9,
+    maintainAspectRatio: false,
     plugins: {
         legend: {
             position: 'right',
@@ -190,5 +194,32 @@ trafficLinks.forEach(link => {
     })
 })
 
-localStorage.setItem('keyName', 'keyValue')
+// localStorage.setItem('keyName', 'keyValue')
 
+/* set  logic in settings for the toggle and geolocation and then save it to localStorage.
+ add localStorage.setItem('settings', whatever function that creates a setting) to the save button
+ add localStorage.removeItem() to cancel button
+*/
+
+const toggles = document.querySelectorAll('.toggle');
+
+toggles.forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+        e.target.classList.toggle('checked')
+    })
+})
+
+const save = document.querySelector('#save');
+
+save.addEventListener('click', 
+localStorage.setItem('savedSettings', settings))
+
+function getSettings() {
+    const settings = localStorage.getItem('savedSettings');
+
+    if (settings) {
+        return JSON.parse(settings);
+    }
+
+    return [];
+}
