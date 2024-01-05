@@ -64,6 +64,7 @@ a {
 .header h1 {
     margin-right: auto;
     color: white;
+    padding-right: 20px;
 }
 
 .user-corner {
@@ -82,6 +83,7 @@ a {
 .user-corner h3 {
     color: white;
     flex-basis: auto;
+    font-size: 1em;
 }
 
 #user-pic {
@@ -92,6 +94,7 @@ a {
 .bell-icon {
     transition: transform .4s ease-out;
     transform-origin: 50% 50%;
+    padding-top: 10px;
 }
 
 .whole-bell {
@@ -265,6 +268,7 @@ https://syntackle.live/blog/how-to-create-a-notification-badge-with-css-Wrkjgwxk
 .widget-container-half {
     width: 100vw;
     height: 30vh;
+    padding: 10px;
 }
 
 
@@ -539,6 +543,10 @@ input[type=checkbox]:checked::after {
             "nav main"
     }
 
+    .user-corner h3 {
+        font-size: 1.2em;
+    }
+
     /* NAV */
 
     .nav {
@@ -580,14 +588,18 @@ input[type=checkbox]:checked::after {
     }
 
     .widget-container-full {
-        height: 50vh;
+        height: 25vh;
         max-width: 100%;
+        padding: 20px;
+
     }
 
     .widget-container-half {
         width: 45vw;
         max-width:100%;
-        height: 50vh;
+        height: 25vh;
+        padding: 20px;
+
     }
 
 
@@ -713,6 +725,15 @@ input[type=checkbox]:checked::after {
         border-top: 1px solid #D2D2D2
     }
 
+    .widget-container-full {
+        height: 50vh;
+
+    }
+
+    .widget-container-half {
+
+        height: 40vh;
+    }
 
     /* MEMBERS */
 

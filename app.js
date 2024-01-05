@@ -25,7 +25,7 @@ alertBanner.addEventListener('click', e => {
 
 const trafficCanvas = document.querySelector('#traffic-chart');
 
-let trafficData = {
+let hourlyTrafficData = {
     labels: [
         "16-22",
         "23-29",
@@ -58,6 +58,105 @@ let trafficData = {
     }]
 };
 
+let dailyTrafficData = {
+    labels: [
+        "16-22",
+        "23-29",
+        "30-5",
+        "6-12",
+        "13-19",
+        "20-26",
+        "27-3",
+        "4-10",
+        "11-17",
+        "18-24",
+        "25-31"
+    ],
+    datasets: [{
+        data: [
+            900,
+            1000,
+            1000,
+            2000,
+            1500,
+            1450,
+            1327,
+            2000,
+            2250,
+            400,
+            2345
+        ],
+        backgroundColor: 'rgba(116, 119, 191, .3)',
+        borderWidth: 1,
+    }]
+};
+
+let weeklyTrafficData = {
+    labels: [
+        "16-22",
+        "23-29",
+        "30-5",
+        "6-12",
+        "13-19",
+        "20-26",
+        "27-3",
+        "4-10",
+        "11-17",
+        "18-24",
+        "25-31"
+    ],
+    datasets: [{
+        data: [
+            111,
+            222,
+            333,
+            444,
+            555,
+            666,
+            777,
+            888,
+            999,
+            1000,
+            2000
+        ],
+        backgroundColor: 'rgba(116, 119, 191, .3)',
+        borderWidth: 1,
+    }]
+};
+
+let monthlyTrafficData = {
+    labels: [
+        "16-22",
+        "23-29",
+        "30-5",
+        "6-12",
+        "13-19",
+        "20-26",
+        "27-3",
+        "4-10",
+        "11-17",
+        "18-24",
+        "25-31"
+    ],
+    datasets: [{
+        data: [
+            348,
+            1539,
+            1604,
+            2343,
+            100,
+            234,
+            1564,
+            1232,
+            132,
+            546,
+            2435
+        ],
+        backgroundColor: 'rgba(116, 119, 191, .3)',
+        borderWidth: 1,
+    }]
+};
+
 let trafficOptions = {
     backgroundColor: 'rgba(112, 104, 201, .5)',
     fill: true,
@@ -75,13 +174,14 @@ let trafficOptions = {
             display: false
         }
     },
-    maintainAspectRatio: false
+    maintainAspectRatio: false,
+    tension: 0.3
 };
 
 
 let trafficChart = new Chart(trafficCanvas, {
     type: 'line',
-    data: trafficData,
+    data: hourlyTrafficData,
     options: trafficOptions
 });
 
@@ -189,8 +289,37 @@ trafficLinks.forEach(link => {
         // remove all active classes
         trafficLinks.forEach(link => {
             link.classList.remove('active')
+            trafficChart.destroy();
         });
         e.target.classList.add('active')
+        console.log(e.target.textContent);
+
+        if (e.target.textContent == "Daily") {
+            trafficChart = new Chart(trafficCanvas, {
+                type: 'line',
+                data: dailyTrafficData,
+                options: trafficOptions
+            });
+        } else if (e.target.textContent == "Weekly") {
+            trafficChart = new Chart(trafficCanvas, {
+                type: 'line',
+                data: weeklyTrafficData,
+                options: trafficOptions
+            });
+        } else if (e.target.textContent == "Monthly") {
+            trafficChart = new Chart(trafficCanvas, {
+                type: 'line',
+                data: monthlyTrafficData,
+                options: trafficOptions
+            });
+        } else if (e.target.textContent == "Hourly") {
+            trafficChart = new Chart(trafficCanvas, {
+                type: 'line',
+                data: hourlyTrafficData,
+                options: trafficOptions
+            });
+        }
+
     })
 })
 
