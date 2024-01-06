@@ -367,6 +367,7 @@ const dropdownContainer = document.getElementById('dropdownContainer');
 const userDropdown = document.getElementById('userDropdown');
 
 
+/* shows available users to message if searched input matches any users in the database*/
 
 userField.addEventListener('keyup', e => {
     let currentValue = e.target.value.toLowerCase();
@@ -379,20 +380,26 @@ userField.addEventListener('keyup', e => {
                 userDropdown.innerHTML += `<li>${name}</li>`
             }
         })
+
     } else {
         dropdownContainer.classList.remove('show');
 
     }
 })
 
+userDropdown.addEventListener('click', e => {
+    let selected = e.target.textContent;
+    console.log(selected);
+    console.log(`user field text content = ${userField.textContent}`);
+    userField.value = selected;
+    console.log(`user field text content after = ${userField.textContent}`)
+})
 
-/* AUTOCOMPLETE 
-Learned and applied from https://www.w3schools.com/howto/howto_js_autocomplete.asp */
+/* hides list of users when clicked outside of it's box */
 
-
-function autocomplete(input, array) {
-    let currentFocus;
-    input.addEventListener("input", function(e) {
-
-    })
+window.onclick = function(e) {
+    if (!event.target.matches('.message-container')) {
+        dropdownContainer.classList.remove('show');
+    }
 }
+

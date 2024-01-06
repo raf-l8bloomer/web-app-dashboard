@@ -449,7 +449,7 @@ ul.user-dropdown {
 }
 
 ul.user-dropdown li {
-    padding: 0.25rem;
+    padding: 0.8rem;
     border-radius: 5px;
     transition: background-color .2s ease;
     cursor: pointer;
