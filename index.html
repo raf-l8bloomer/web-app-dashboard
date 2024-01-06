@@ -252,8 +252,15 @@
         <!-- MESSAGE USER -->
         <section class="message">
             <h3>Message User</h3>
-            <form class="message-container">
-                <input type="text" placeholder="Search for user" class="form-field" id="userField">
+            <form autocomplete="off" class="message-container" id="searchUser">
+                <div class="search-container" style="width: 100%;">
+                    <input type="text" placeholder="Search for user" class="user-field" id="userField">
+                    <div class="dropdown-container" id="dropdownContainer">
+                        <ul class="user-dropdown" id="userDropdown">
+                            <!-- dynamic -->
+                        </ul>
+                    </div>
+                </div>
                 <textarea placeholder="Message for user" class="form-area" id="messageField"></textarea>
                 <button class="button-primary" id="send">Send</button>
             </form>
@@ -297,4 +304,3 @@
 </body>
 
 </html>
-

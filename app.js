@@ -352,3 +352,47 @@ function getSettings() {
 
     return [];
 }
+
+
+const userNames = [
+    "Victoria Chambers",
+    "Dale Byrd",
+    "Dawn Wood",
+    "Dan Oliver"
+]
+
+const userField = document.getElementById('userField');
+const searchContainer = document.getElementsByClassName('search-container');
+const dropdownContainer = document.getElementById('dropdownContainer');
+const userDropdown = document.getElementById('userDropdown');
+
+
+
+userField.addEventListener('keyup', e => {
+    let currentValue = e.target.value.toLowerCase();
+    console.log(currentValue);
+    if (currentValue !== '') {
+        userDropdown.innerHTML = '';
+        dropdownContainer.classList.add('show');
+        userNames.forEach(name => {
+            if (name.toLowerCase().includes(currentValue.toLowerCase())) {
+                userDropdown.innerHTML += `<li>${name}</li>`
+            }
+        })
+    } else {
+        dropdownContainer.classList.remove('show');
+
+    }
+})
+
+
+/* AUTOCOMPLETE 
+Learned and applied from https://www.w3schools.com/howto/howto_js_autocomplete.asp */
+
+
+function autocomplete(input, array) {
+    let currentFocus;
+    input.addEventListener("input", function(e) {
+
+    })
+}
