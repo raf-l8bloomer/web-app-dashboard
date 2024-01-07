@@ -1,6 +1,56 @@
-/* ALERT BANNER */
+
+
+
+// Alert and Notification Elements
 
 const alertBanner = document.querySelector('#alert');
+const bellNotification = document.querySelector('.whole-bell');
+const notificationDiv = document.createElement('div');
+const wholeBell = document.querySelector(".whole-bell");
+const bell = document.querySelector(".bell-svg");
+
+// Chart Elements
+const trafficCanvas = document.querySelector('#traffic-chart');
+const dailyCanvas = document.querySelector('#daily-chart');
+const mobileCanvas = document.querySelector("#mobile-chart");
+const trafficLinks = document.querySelectorAll('.traffic-nav-link');
+
+// Messaging Elements
+
+const user = document.querySelector('#userField');
+const userField = document.getElementById('userField');
+const searchContainer = document.getElementsByClassName('search-container');
+const dropdownContainer = document.getElementById('dropdownContainer');
+const userDropdown = document.getElementById('userDropdown');
+const message = document.querySelector('#messageField');
+const send = document.querySelector('#send');
+
+const userNames = [
+    "Victoria Chambers",
+    "Dale Byrd",
+    "Dawn Wood",
+    "Dan Oliver"
+]
+
+// Settings Elements
+const timezones = document.getElementById('timezone');
+const timezoneOptions = timezones.options;
+const notificationToggle = document.getElementById('notifications');
+const publicProfileToggle = document.getElementById('public-profile');
+
+const save = document.getElementById('save');
+const cancel = document.getElementById('cancel');
+
+/*Initialize settings*/
+getLocalStorage();
+
+
+/* ALERT */
+
+
+// inserts alert banner
+notificationDiv.id = "notification";
+bellNotification.insertAdjacentElement("beforeend", notificationDiv);
 
 alertBanner.innerHTML = `<div class="alert-banner">
     <p> <strong>Alert:</strong> You have <strong> 6</strong> overdue tasks
@@ -8,11 +58,8 @@ to complete</p >
     <p class="alert-banner-close">x</p>
 </div>`;
 
-const bellNotification = document.querySelector('.whole-bell');
-const notificationDiv = document.createElement('div');
-notificationDiv.id = "notification";
-bellNotification.insertAdjacentElement("beforeend", notificationDiv);
 
+// removes alert banner if 'x' is clicked
 alertBanner.addEventListener('click', e => {
     const element = e.target;
     if (element.classList.contains("alert-banner-close")) {
@@ -21,10 +68,15 @@ alertBanner.addEventListener('click', e => {
     }
 })
 
+// alerts notifications when bell is clicked
+bell.addEventListener('click', () => {
+    alert('You rang my bell!')
+})
 
 
-const trafficCanvas = document.querySelector('#traffic-chart');
+/* CHARTS */
 
+// DATA
 let hourlyTrafficData = {
     labels: [
         "16-22",
@@ -185,103 +237,6 @@ let trafficChart = new Chart(trafficCanvas, {
     options: trafficOptions
 });
 
-const dailyCanvas = document.querySelector('#daily-chart');
-
-const dailyData = {
-    labels: ["S", "M", "T", "W", "TH", "F", "S"],
-    datasets: [{
-        label: '# of Hits',
-        data: [75, 115, 175, 125, 225, 200, 100],
-        backgroundColor: '#7477BF',
-        borderWidth: 1
-    }]
-};
-
-const dailyOptions = {
-    scales: {
-        y: {
-            beginAtZero: true
-        }
-    },
-    plugins: {
-        legend: {
-            display: false
-        }
-    },
-    maintainAspectRatio: false,
-    aspectRatio: 2
-
-};
-
-let dailyChart = new Chart(dailyCanvas, {
-    type: 'bar',
-    data: dailyData,
-    options: dailyOptions
-});
-
-const mobileCanvas = document.querySelector("#mobile-chart");
-
-const mobileData = {
-    labels: ["Desktop", "Tablet", "Phones"],
-    datasets: [{
-        label: '# of Users',
-        data: [2000, 550, 500],
-        borderWidth: 0,
-        backgroundColor: [
-            '#7477BF',
-            '#78CF82',
-            '#51B6C8'
-        ]
-    }]
-}
-
-const mobileOptions = {
-    aspectRatio: 1.9,
-    maintainAspectRatio: false,
-    plugins: {
-        legend: {
-            position: 'right',
-            labels: {
-                boxWidth: 20,
-                fontStyle: 'bold'
-            }
-        }
-    }
-};
-
-let mobileChart = new Chart(mobileCanvas, {
-    type: 'doughnut',
-    data: mobileData,
-    options: mobileOptions
-})
-
-const user = document.querySelector('#userField');
-const message = document.querySelector('#messageField');
-const send = document.querySelector('#send');
-
-send.addEventListener('click', () => {
-
-    if (user.value === "" && message.value === "") {
-        alert("Please fill out user and message fields before sending");
-    } else if (user.value === "") {
-        alert("Please fill out user field before sending");
-    } else if (message.value === "") {
-        alert("Please fill out message field before sending");
-    } else {
-        alert(`Message successfully sent to: ${user.value}`)
-    }
-})
-
-const wholeBell = document.querySelector(".whole-bell");
-const bell = document.querySelector(".bell-svg");
-
-bell.addEventListener('click', () => {
-    alert('You rang my bell!')
-})
-
-
-
-const trafficLinks = document.querySelectorAll('.traffic-nav-link');
 
 // Assign event listener to all traffic nav links
 trafficLinks.forEach(link => {
@@ -323,52 +278,97 @@ trafficLinks.forEach(link => {
     })
 })
 
-// localStorage.setItem('keyName', 'keyValue')
 
-/* set  logic in settings for the toggle and geolocation and then save it to localStorage.
- add localStorage.setItem('settings', whatever function that creates a setting) to the save button
- add localStorage.removeItem() to cancel button
-*/
 
-const toggles = document.querySelectorAll('.toggle');
 
-toggles.forEach(toggle => {
-    toggle.addEventListener('click', (e) => {
-        e.target.classList.toggle('checked')
-    })
-})
 
-const save = document.querySelector('#save');
+const dailyData = {
+    labels: ["S", "M", "T", "W", "TH", "F", "S"],
+    datasets: [{
+        label: '# of Hits',
+        data: [75, 115, 175, 125, 225, 200, 100],
+        backgroundColor: '#7477BF',
+        borderWidth: 1
+    }]
+};
 
-save.addEventListener('click', 
-localStorage.setItem('savedSettings', settings))
+const dailyOptions = {
+    scales: {
+        y: {
+            beginAtZero: true
+        }
+    },
+    plugins: {
+        legend: {
+            display: false
+        }
+    },
+    maintainAspectRatio: false,
+    aspectRatio: 2
 
-function getSettings() {
-    const settings = localStorage.getItem('savedSettings');
+};
 
-    if (settings) {
-        return JSON.parse(settings);
-    }
+let dailyChart = new Chart(dailyCanvas, {
+    type: 'bar',
+    data: dailyData,
+    options: dailyOptions
+});
 
-    return [];
+
+const mobileData = {
+    labels: ["Desktop", "Tablet", "Phones"],
+    datasets: [{
+        label: '# of Users',
+        data: [2000, 550, 500],
+        borderWidth: 0,
+        backgroundColor: [
+            '#7477BF',
+            '#78CF82',
+            '#51B6C8'
+        ]
+    }]
 }
 
+const mobileOptions = {
+    aspectRatio: 1.9,
+    maintainAspectRatio: false,
+    plugins: {
+        legend: {
+            position: 'right',
+            labels: {
+                boxWidth: 20,
+                fontStyle: 'bold'
+            }
+        }
+    }
+};
 
-const userNames = [
-    "Victoria Chambers",
-    "Dale Byrd",
-    "Dawn Wood",
-    "Dan Oliver"
-]
-
-const userField = document.getElementById('userField');
-const searchContainer = document.getElementsByClassName('search-container');
-const dropdownContainer = document.getElementById('dropdownContainer');
-const userDropdown = document.getElementById('userDropdown');
+let mobileChart = new Chart(mobileCanvas, {
+    type: 'doughnut',
+    data: mobileData,
+    options: mobileOptions
+})
 
 
-/* shows available users to message if searched input matches any users in the database*/
+/* MESSAGE USER */ 
 
+//alerts user if fields are empty
+
+send.addEventListener('click', () => {
+
+    if (user.value === "" && message.value === "") {
+        alert("Please fill out user and message fields before sending");
+    } else if (user.value === "") {
+        alert("Please fill out user field before sending");
+    } else if (message.value === "") {
+        alert("Please fill out message field before sending");
+    } else {
+        alert(`Message successfully sent to: ${user.value}`)
+    }
+})
+
+
+// displays available users to message if searched input matches any users in the database
 userField.addEventListener('keyup', e => {
     let currentValue = e.target.value.toLowerCase();
     console.log(currentValue);
@@ -380,26 +380,84 @@ userField.addEventListener('keyup', e => {
                 userDropdown.innerHTML += `<li>${name}</li>`
             }
         })
-
     } else {
         dropdownContainer.classList.remove('show');
 
     }
 })
 
+
+// Adds the selection from dropdown to the input
 userDropdown.addEventListener('click', e => {
     let selected = e.target.textContent;
-    console.log(selected);
-    console.log(`user field text content = ${userField.textContent}`);
     userField.value = selected;
-    console.log(`user field text content after = ${userField.textContent}`)
 })
 
-/* hides list of users when clicked outside of it's box */
-
-window.onclick = function(e) {
+// hides dropdown when clicked outside of dropdown
+window.onclick = function (e) {
     if (!event.target.matches('.message-container')) {
         dropdownContainer.classList.remove('show');
     }
 }
+
+
+/* SETTINGS */ 
+
+// Saves settings
+
+save.addEventListener('click', () => {
+    if (notificationToggle.checked) {
+        localStorage.setItem('notifications', 'true')
+    } else {
+        localStorage.setItem('notifications', 'false')
+    }
+
+    if (publicProfileToggle.checked) {
+        localStorage.setItem('public-profile', 'true')
+    } else {
+        localStorage.setItem('public-profile', 'false')
+    }
+
+    for (let i=0; i < timezoneOptions.length; i++) {
+        const option = timezoneOptions[i];
+        if (option.selected) {
+            localStorage.setItem('timezone', JSON.stringify(option.value))
+        } 
+    }
+});
+
+// Adjusts settings upon load based on saved settings 
+
+function getLocalStorage() {
+    const notificationSetting = localStorage.getItem('notifications');
+    const publicProfileSetting = localStorage.getItem('public-profile');
+    const timezoneSetting = localStorage.getItem('timezone');
+
+    if (notificationSetting == "true") {
+        notificationToggle.checked = true;
+    } else {
+        notificationToggle.checked = false;
+    }
+
+    if (publicProfileSetting == "true") {
+        publicProfileToggle.checked = true;
+    } else {
+        publicProfileToggle.checked = false;
+    }
+
+    timezones.value = JSON.parse(timezoneSetting);
+}
+
+// Removes settings changes before save *DOES NOT RESET SETTINGS*
+
+cancel.addEventListener('click', () => {
+    notificationToggle.checked = false;
+    publicProfileToggle.checked = false;
+    for (let i=0; i < timezoneOptions.length; i++) {
+        const option = timezoneOptions[i];
+        if (option.disabled) {
+            option.selected = true;
+        }
+    }
+})
 

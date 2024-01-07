@@ -279,14 +279,16 @@
             <div class="toggle-container">
 
                 <!-- CSS Toggle Code -->
-                <label for="public-profile">Send Email Notifications</label>
+                <label for="public-profile">Set Profile to Public</label>
                 <input class="toggle" type="checkbox" id="public-profile">
             </div>
 
             <div class="form-container">
                 <select class="form-field" id="timezone">
                     <option disabled selected>Select a Timezone</option>
-                    <option>Eastern</option>
+                    <option value="eastern">Eastern</option>
+                    <option value="pacific">Pacific</option>
+
                 </select>
                 <div class="settings-buttons">
                     <button class="button-primary" id="save">Save</button>

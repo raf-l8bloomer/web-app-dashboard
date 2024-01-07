@@ -212,7 +212,7 @@ https://syntackle.live/blog/how-to-create-a-notification-badge-with-css-Wrkjgwxk
     border-radius: 10px;
     display: flex;
     flex-direction: row;
-    margin: 5px;
+    margin: 30px 5px;
     padding: 0 10px;
     align-items: center;
 }
@@ -233,17 +233,20 @@ https://syntackle.live/blog/how-to-create-a-notification-badge-with-css-Wrkjgwxk
     flex-direction: column;
 }
 
+ul.traffic-nav {
+    margin: 0;
+    padding: 0;
+}
+
 .traffic-nav {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     list-style: none;
-
 }
 
 .traffic-nav li {
     margin: 1rem;
-
 }
 
 .traffic-nav-link {
@@ -373,8 +376,14 @@ https://syntackle.live/blog/how-to-create-a-notification-badge-with-css-Wrkjgwxk
 }
 
 /* MESSAGE USER */
+.message {
+    display: flex;
+    flex-direction: column;
+}
 
 .message-container {
+    margin-top: auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -506,9 +515,6 @@ ul.user-dropdown li:hover {
 
 /* SETTINGS */
 
-.toggle-container {
-    flex-grow: 1;
-}
 
 
 input[type=checkbox] {
@@ -555,6 +561,7 @@ input[type=checkbox]:checked::after {
 .toggle-container {
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: flex-start;
     margin: 15px;
 }
